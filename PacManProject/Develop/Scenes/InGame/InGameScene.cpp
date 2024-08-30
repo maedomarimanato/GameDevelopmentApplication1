@@ -9,7 +9,7 @@
 #include "DxLib.h"
 #include <fstream>
 
-InGameScene::InGameScene() 
+InGameScene::InGameScene()
 	: player(nullptr)
 	, back_ground_image(NULL)
 	, back_ground_sound(NULL)
@@ -44,7 +44,7 @@ void InGameScene::Initialize()
 eSceneType InGameScene::Update(const float& delta_second)
 {
 	InputManager* input = InputManager::GetInstance();
-	
+
 	if (input->GetKeyDown(KEY_INPUT_P) || input->GetButtonDown(XINPUT_BUTTON_START))
 	{
 		pause_flag = !pause_flag;
@@ -118,7 +118,7 @@ void InGameScene::CheckCollision(GameObjectBase* target, GameObjectBase* partner
 	// 当たり判定が有効か確認する
 	if (tc.IsCheckHitTarget(pc.object_type) || pc.IsCheckHitTarget(tc.object_type))
 	{
-		
+
 		// 線分の始点と終点を設定する
 		tc.point[0] += target->GetLocation();
 		tc.point[1] += target->GetLocation();
@@ -132,7 +132,7 @@ void InGameScene::CheckCollision(GameObjectBase* target, GameObjectBase* partner
 			target->OnHitCollision(partner);
 			partner->OnHitCollision(target);
 		}
-		
+
 	}
 }
 
@@ -175,23 +175,23 @@ void InGameScene::LoadStageMapCSV()
 		switch (mode)
 		{
 			// 壁
-			case '#':
-				generate_location = (Vector2D((float)(spos_x - 1), (float)(spos_y - 1)) * D_OBJECT_SIZE) + (D_OBJECT_SIZE / 2.0f);
-				CreateObject<Wall>(generate_location)->SetWallData(x_size, y_size);
-				break;
+		case '#':
+			generate_location = (Vector2D((float)(spos_x - 1), (float)(spos_y - 1)) * D_OBJECT_SIZE) + (D_OBJECT_SIZE / 2.0f);
+			CreateObject<Wall>(generate_location)->SetWallData(x_size, y_size);
+			break;
 			// プレイヤー
-			case 'P':
-				generate_location = (Vector2D((float)(spos_x - 1), (float)(spos_y - 1)) * D_OBJECT_SIZE) + (D_OBJECT_SIZE / 2.0f);
-				player = CreateObject<Player>(generate_location);
-				break;
+		case 'P':
+			generate_location = (Vector2D((float)(spos_x - 1), (float)(spos_y - 1)) * D_OBJECT_SIZE) + (D_OBJECT_SIZE / 2.0f);
+			player = CreateObject<Player>(generate_location);
+			break;
 			// エネミー
-			case 'E':
-				generate_location = (Vector2D((float)(spos_x - 1), (float)(spos_y - 1)) * D_OBJECT_SIZE) + (D_OBJECT_SIZE / 2.0f);
-				CreateObject<EnemyBase>(generate_location);
-				break;
+		case 'E':
+			generate_location = (Vector2D((float)(spos_x - 1), (float)(spos_y - 1)) * D_OBJECT_SIZE) + (D_OBJECT_SIZE / 2.0f);
+			CreateObject<EnemyBase>(generate_location);
+			break;
 			// 上記以外
-			default:
-				break;
+		default:
+			break;
 		}
 
 	}

@@ -1,6 +1,8 @@
-﻿#include <vector>
-#include <map>
+﻿#ifndef STAGEDATA_H
+#define STAGEDATA_H
 
+#include <vector>
+#include <map>
 #include "Vector2D.h"
 
 /// <summary>
@@ -77,3 +79,5 @@ private:
 	/// </summary>
 	void Load();
 };
+
+#endif // STAGEDATA_H

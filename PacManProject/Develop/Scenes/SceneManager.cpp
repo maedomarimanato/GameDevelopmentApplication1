@@ -73,7 +73,7 @@ void SceneManager::Run()
 	{
 		// 入力情報の更新
 		input->Update();
-		
+
 
 		// フレームレートの制御
 		FreamControl();
@@ -176,14 +176,14 @@ SceneBase* SceneManager::CreateScene(eSceneType next_type)
 	// シーンタイプによって、生成するシーンを切り替える
 	switch (next_type)
 	{
-		case eSceneType::title:
-			return dynamic_cast<SceneBase*>(new TitleScene());
-		case eSceneType::in_game:
-		case eSceneType::re_start:
-			return dynamic_cast<SceneBase*>(new InGameScene());
-		case eSceneType::result:
-			return dynamic_cast<SceneBase*>(new ResultScene());
-		default:
-			return nullptr;
+	case eSceneType::title:
+		return dynamic_cast<SceneBase*>(new TitleScene());
+	case eSceneType::in_game:
+	case eSceneType::re_start:
+		return dynamic_cast<SceneBase*>(new InGameScene());
+	case eSceneType::result:
+		return dynamic_cast<SceneBase*>(new ResultScene());
+	default:
+		return nullptr;
 	}
 }

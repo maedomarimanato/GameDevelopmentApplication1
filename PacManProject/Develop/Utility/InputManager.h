@@ -46,7 +46,7 @@ public:
 	/// <summary>
 	/// インスタンス削除処理
 	/// </summary>
-	static void DeleteInstance ();
+	static void DeleteInstance();
 
 public:
 	/// <summary>
@@ -114,7 +114,7 @@ public:
 	/// </summary>
 	/// <returns>左スティック入力状態(-1.0f～1.0f)</returns>
 	Vector2D GetLeftStick() const;
-	
+
 	/// <summary>
 	/// 右スティック入力状態取得
 	/// </summary>

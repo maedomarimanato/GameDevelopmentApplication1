@@ -16,7 +16,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 		// 初期化処理
 		manager.WakeUp();
-		
+
 		// 実行処理
 		manager.Run();
 

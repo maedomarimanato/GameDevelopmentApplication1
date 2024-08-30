@@ -18,7 +18,7 @@ enum eMobilityType
 class GameObjectBase
 {
 protected:
-	class SceneBase*	owner_scene;	// 所有するシーン情報
+	class SceneBase* owner_scene;	// 所有するシーン情報
 	Vector2D			location;		// 位置座標
 	CapsuleCollision	collision;		// 当たり判定情報
 	int					image;			// 画像情報

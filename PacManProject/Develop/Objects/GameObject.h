@@ -27,7 +27,7 @@ public:
 	{
 		owner_scene->DestroyObject(target);
 	}
-	
+
 	/// <summary>
 	/// スクリーンオフセット情報取得処理
 	/// </summary>
